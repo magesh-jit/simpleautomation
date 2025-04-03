@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'mymaven'  // Use the exact name you set in Jenkins
+        maven 'mymaven'
     }
     stages {
         stage('Checkout Code') {
@@ -12,13 +12,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvn clean install'
+                bat '@echo off && "C:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn" clean install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'mvn test'
+                bat '@echo off && "C:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn" test'
             }
         }
     }
