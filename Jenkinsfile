@@ -11,7 +11,8 @@ pipeline {
             steps {
                 script {
                     dir('Selenium') {  // Change directory to 'project' where pom.xml is located
-                        bat '"C:\apache-maven-3.9.9-bin\apache-maven-3.9.9" clean install'
+                        bat '"C:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn" clean install'
+
                     }
                 }
             }
