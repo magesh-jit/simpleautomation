@@ -8,17 +8,15 @@ pipeline {
         }
 
         stage('Build') {
-    steps {
-        bat 'mvn clean install'
-    }
-}
+            steps {
+                bat '"C:\\Program Files\\Apache\\maven\\bin\\mvn" clean install'
+            }
+        }
 
         stage('Run Tests') {
             steps {
-                sh 'mvn test'  // This runs Selenium test scripts
+                bat '"C:\\Program Files\\Apache\\maven\\bin\\mvn" test'  // Use bat instead of sh for Windows
             }
         }
     }
 }
-
-
