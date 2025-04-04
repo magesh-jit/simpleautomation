@@ -7,15 +7,17 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/magesh-jit/simpleautomation.git'
             }
         }
+
         stage('Build') {
             steps {
                 script {
-                    dir('Selenium') {  // Ensure this is the correct directory where pom.xml is located
+                    dir('Selenium') {
                         bat '"C:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn" clean install'
                     }
                 }
             }
         }
+
         stage('Run Tests') {
             steps {
                 script {
@@ -25,11 +27,17 @@ pipeline {
                 }
             }
         }
-        stage('Publish Test Results') {
-    steps {
-        junit 'Selenium/target/surefire-reports/*.xml' // ✅ Correct path for your setup
-    }
-}
 
+        stage('Publish JUnit Results') {
+            steps {
+                junit 'Selenium/target/surefire-reports/*.xml'
+            }
+        }
+
+        stage('Publish TestNG Report') {
+            steps {
+                publishTestNGResults testResultsPattern: 'Selenium/test-output/testng-results.xml'
+            }
+        }
     }
 }
