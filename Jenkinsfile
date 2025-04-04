@@ -26,9 +26,10 @@ pipeline {
             }
         }
         stage('Publish Test Results') {
-            steps {
-                junit '**/target/surefire-reports/*.xml' // Publish TestNG results
-            }
-        }
+    steps {
+        junit 'Selenium/target/surefire-reports/*.xml' // ✅ Correct path for your setup
+    }
+}
+
     }
 }
