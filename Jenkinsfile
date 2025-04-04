@@ -39,5 +39,12 @@ pipeline {
                 publishTestNGResults testResultsPattern: 'Selenium/test-output/testng-results.xml'
             }
         }
+
+        // ✅ New stage added below to archive the report
+        stage('Archive TestNG HTML Report') {
+            steps {
+                archiveArtifacts artifacts: 'Selenium/test-output/**/*.*', fingerprint: true
+            }
+        }
     }
 }
