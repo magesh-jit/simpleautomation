@@ -20,8 +20,8 @@ public class RunLogin {
 		    	
 		    	
 		    	String url = config.getProperty("app.url");
-		        String username = config.getProperty("username");
-		        String password = config.getProperty("password");
+		        String username = config.getProperty("app.username");
+		        String password = config.getProperty("app.password");
 		        
 		        
 		        System.out.println("URL: " + url);
