@@ -46,12 +46,15 @@
 <build>
     <sourceDirectory>src/main/java</sourceDirectory>
     <testSourceDirectory>src/test/java</testSourceDirectory>
-   <testResources>
-        <testResource>
-            <directory>src/test/resources</directory>
-            
-        </testResource>
-    </testResources>
+
+    <resources>
+        <resource>
+            <directory>src/test/resource</directory>
+            <includes>
+                <include>config.properties</include>
+            </includes>
+        </resource>
+    </resources>
 
     <plugins>
         <plugin>
