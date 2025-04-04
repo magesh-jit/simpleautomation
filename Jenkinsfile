@@ -10,11 +10,24 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    dir('Selenium') {  // Change directory to 'project' where pom.xml is located
+                    dir('Selenium') {  // Ensure this is the correct directory where pom.xml is located
                         bat '"C:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn" clean install'
-
                     }
                 }
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                script {
+                    dir('Selenium') {
+                        bat '"C:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn" test'
+                    }
+                }
+            }
+        }
+        stage('Publish Test Results') {
+            steps {
+                junit '**/target/surefire-reports/*.xml' // Publish TestNG results
             }
         }
     }
