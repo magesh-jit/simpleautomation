@@ -34,11 +34,11 @@ pipeline {
             }
         }
 
-        stage('Publish TestNG Report') {
-            steps {
-                publishTestNGResults testResultsPattern: 'Selenium/test-output/testng-results.xml'
-            }
-        }
+        //stage('Publish TestNG Report') {
+            //steps {
+            //    publishTestNGResults testResultsPattern: 'Selenium/test-output/testng-results.xml'
+           // }
+        //}
 
         // ✅ New stage added below to archive the report
         stage('Archive TestNG HTML Report') {
