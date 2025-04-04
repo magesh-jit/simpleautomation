@@ -44,9 +44,9 @@ public class UserAdd {
         driver.findElement(By.xpath("//a[@href='https://blitz.innoblitz.in/fireblitz/public/users/create']")).click();
 
         // **Fill User Details**
-        driver.findElement(By.xpath("//input[@placeholder='Enter name']")).sendKeys("murthi");
-        driver.findElement(By.xpath("//input[@placeholder='Enter mobile']")).sendKeys("7744558899");
-        driver.findElement(By.xpath("//input[@placeholder='Enter email']")).sendKeys("murthi12@gmail.com");
+        driver.findElement(By.xpath("//input[@placeholder='Enter name']")).sendKeys("sharthi");
+        driver.findElement(By.xpath("//input[@placeholder='Enter mobile']")).sendKeys("7744558894");
+        driver.findElement(By.xpath("//input[@placeholder='Enter email']")).sendKeys("sharathi2@gmail.com");
         
         
         WebElement dropdown=driver.findElement(By.xpath("//select[@id='purpose-select']"));
@@ -57,6 +57,8 @@ public class UserAdd {
         driver.findElement(By.xpath("//input[@type='submit']")).click();
 
         System.out.println("User added successfully!");
+        
+        driver.quit();
         
 	
 }

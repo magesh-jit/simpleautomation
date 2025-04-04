@@ -54,6 +54,8 @@ public class AddSegment {
 
       System.out.println("Segment added successfully!");
       
+      driver.quit();
+      
 	
 }
 

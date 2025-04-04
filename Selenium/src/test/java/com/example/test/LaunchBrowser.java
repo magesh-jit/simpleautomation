@@ -33,10 +33,10 @@ public class LaunchBrowser {
 	        driver.findElement(By.xpath("//input[@type='email']")).sendKeys("admin@gmail.com");
 	        driver.findElement(By.xpath("//input[@type='password']")).sendKeys("123456");
 	        driver.findElement(By.xpath("//button[@type='submit']")).click();
-	        driver.quit();
+	        
 	        
 	        System.out.println("Open broswer successfully");
-	    
+	        driver.quit();
 	    
 	    }
 
